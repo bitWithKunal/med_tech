@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>सामान्य बीमारियों की दवा गाइड / Common Medicine Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+
+
+        body {
+            font-family: 'Noto Sans Devanagari', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f6f8;
+        }
+        .symbol-legend {
+            background: #fff;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .symbol-legend h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #2c3e50;
+        }
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .legend-icon {
+            font-size: 1.8em;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar input {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .navbar input:focus {
+            outline: none;
+            box-shadow: 0 0 5px #007bff;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            page-break-after: always;
+        }
+
+        .cover-title {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cover-subtitle {
+            font-size: 2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cover-icons {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .cover-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cover-icon span {
+            font-size: 3.5em;
+        }
+
+        .cover-icon p {
+            font-size: 1.3em;
+        }
+
+        /* Emergency Section */
+        .emergency-section {
+            background: #dc3545;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .emergency-section h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .emergency-number {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        /* Index Section */
+        .index-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .index-title {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        .index-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .index-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .index-item:hover {
+            border-color: #007bff;
+            background: #f8f9ff;
+            transform: translateY(-2px);
+        }
+
+        .index-emoji {
+            font-size: 2.8em;
+            margin-right: 15px;
+        }
+
+        .index-text h3 {
+            font-size: 1.4em;
+            margin-bottom: 5px;
+        }
+        .download-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-left: 10px;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background: #45a049;
+}
+
+@media (max-width: 768px) {
+    .download-btn {
+        width: 100%;
+        margin: 10px 0 0 0;
+    }
+}
+
+        .index-text p {
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        /* Medicine Tables */
+        .medicine-section {
+            margin-bottom: 50px;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            background: linear-gradient(90deg, #4CAF50, #45a049);
+            color: white;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-emoji {
+            font-size: 2.2em;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .medicine-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+        }
+
+        .medicine-table th {
+            background: #f8f9fa;
+            padding: 15px 10px;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .medicine-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #dee2e6;
+            vertical-align: top;
+        }
+
+        .medicine-table tr:hover {
+            background: #f8f9ff;
+        }
+
+        /* Color coding for different medicine types */
+        .otc-medicine {
+            border-left: 4px solid #28a745;
+        }
+
+        .prescription-medicine {
+            border-left: 4px solid #dc3545;
+        }
+
+        .home-remedy {
+            background: #e8f5e8;
+            border-left: 4px solid #4CAF50;
+        }
+
+        /* Symbol styles */
+        .medicine-symbols {
+            font-size: 1.3em;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .dose-info {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .hindi-text {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .english-text {
+            color: #495057;
+            font-style: italic;
+        }
+
+        /* Tooltip for precautions */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Home Remedies Section */
+        .home-remedies {
+            background: linear-gradient(135deg, #a8e6cf, #7fcdcd);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .remedy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .remedy-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .remedy-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .remedy-icon {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        /* Pediatric Section */
+        .pediatric-section {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .dose-visual {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .spoon-icon {
+            font-size: 1.8em;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                font-size: 11pt;
+            }
+            .container {
+                max-width: none;
+                padding: 0;
+            }
+            .navbar {
+                display: none;
+            }
+            .medicine-section {
+                page-break-inside: avoid;
+                margin-bottom: 20pt;
+            }
+            .cover-page {
+                page-break-after: always;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .cover-title { font-size: 2.2em; }
+            .cover-subtitle { font-size: 1.6em; }
+            .cover-icons { flex-direction: column; gap: 25px; }
+            .navbar input { width: 100%; }
+            .medicine-table { font-size: 0.85em; }
+            .medicine-table th, .medicine-table td { padding: 8px 5px; }
+            .index-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+
+    </div>
+
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="cover-page">
+            <h1 class="cover-title">सामान्य बीमारियों की दवा गाइड</h1>
+            <h2 class="cover-subtitle">Common Medicine Guide</h2>
+            <p style="font-size: 1.3em; margin: 20px 0;">घरेलू उपचार और दवाओं की संपूर्ण जानकारी<br>Complete Guide to Home Remedies and Medicines</p>
+
+            <div class="cover-icons">
+                <div class="cover-icon">
+                    <span>🏠</span>
+                    <p>घर पर / At Home</p>
+                </div>
+                <div class="cover-icon">
+                    <span>⚕️</span>
+                    <p>डॉक्टर / Doctor</p>
+                </div>
+                <div class="cover-icon">
+                    <span>☎️</span>
+                    <p>आपातकाल / Emergency</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emergency Section -->
+        <div class="emergency-section">
+            <h2>🚨 आपातकालीन संपर्क / Emergency Contacts</h2>
+            <div class="emergency-number">☎️ 1800-116-117</div>
+            <p>भारत पॉइज़न कंट्रोल / India Poison Control</p>
+            <div class="emergency-number">☎️ 108</div>
+            <p>राष्ट्रीय एम्बुलेंस सेवा / National Ambulance Service</p>
+        </div>
+
+        <!-- Index Section -->
+        <div class="index-section">
+            <h2 class="index-title">सूची / Index</h2>
+            <div class="index-grid">
+                <div class="index-item" onclick="scrollToSection('fever-section')">
+                    <span class="index-emoji">🤒</span>
+                    <div class="index-text">
+                        <h3>बुखार और सर्दी / Fever & Cold</h3>
+                        <p>पैरासिटामोल, सेट्रीज़िन / Paracetamol, Cetirizine</p>
+                    </div>
+                </div>
+                <div class="index-item" onclick="scrollToSection('stomach-section')">
+                    <span class="index-emoji">🤢</span>
+                    <div class="index-text">
+                        <h3>पेट की समस्या / Stomach Issues</h3>
+                        <p>दस्त, उल्टी, गैस / Diarrhea, Vomiting, Gas</p>
+                    </div>
+                </div>
+                <div class="index-item" onclick="scrollToSection('pain-section')">
+                    <span class="index-emoji">😖</span>
+                    <div class="index-text">
+                        <h3>दर्द निवारक / Pain Relief</h3>
+                        <p>सिरदर्द, मांसपेशियों का दर्द / Headache, Muscle Pain</p>
+                    </div>
+                </div>
+                <div class="index-item" onclick="scrollToSection('skin-section')">
+                    <span class="index-emoji">🩹</span>
+                    <div class="index-text">
+                        <h3>चर्म रोग / Skin Conditions</h3>
+                        <p>खुजली, चकत्ते, कटना / Itching, Rashes, Cuts</p>
+                    </div>
+                </div>
+                <div class="index-item" onclick="scrollToSection('respiratory-section')">
+                    <span class="index-emoji">🫁</span>
+                    <div class="index-text">
+                        <h3>सांस की समस्या / Respiratory</h3>
+                        <p>खांसी, दमा / Cough, Asthma</p>
+                    </div>
+                </div>
+                <div class="index-item" onclick="scrollToSection('eye-ear-section')">
+                    <span class="index-emoji">👁️</span>
+                    <div class="index-text">
+                        <h3>आंख-कान / Eye & Ear</h3>
+                        <p>आंख में संक्रमण, कान दर्द / Eye Infection, Ear Pain</p>
+                    </div>
+                </div>
+                <div class="index-item" onclick="scrollToSection('allergy-section')">
+                    <span class="index-emoji">🤧</span>
+                    <div class="index-text">
+                        <h3>एलर्जी / Allergies</h3>
+                        <p>एलर्जिक राइनाइटिस, त्वचा एलर्जी / Allergic Rhinitis, Skin Allergies</p>
+                    </div>
+                </div>
+                <div class="index-item" onclick="scrollToSection('infection-section')">
+                    <span class="index-emoji">🦠</span>
+                    <div class="index-text">
+                        <h3>संक्रमण / Infections</h3>
+                        <p>यूटीआई, गले में खराश / UTI, Sore Throat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="symbol-legend">
+        <h2>प्रतीक चिन्हों का अर्थ / Symbol Legend</h2>
+        <div class="legend-grid">
+            <div class="legend-item"><span class="legend-icon">💊</span> टैबलेट / Tablet</div>
+            <div class="legend-item"><span class="legend-icon">💧</span> सिरप या ड्रॉप्स / Syrup or Drops</div>
+            <div class="legend-item"><span class="legend-icon">🧴</span> क्रीम या जेल / Cream or Gel</div>
+            <div class="legend-item"><span class="legend-icon">🌿</span> घरेलू उपाय / Home Remedy</div>
+            <div class="legend-item"><span class="legend-icon">🟢</span> OTC दवा / OTC Medicine</div>
+            <div class="legend-item"><span class="legend-icon">🔴</span> डॉक्टर द्वारा लिखी जाने वाली दवा / Prescription Medicine</div>
+            <div class="legend-item"><span class="legend-icon">⚠️</span> सावधानी / Caution</div>
+            <div class="legend-item"><span class="legend-icon">💤</span> नींद आना / Drowsiness</div>
+            <div class="legend-item"><span class="legend-icon">👁️</span> आँख / Eye</div>
+            <div class="legend-item"><span class="legend-icon">👂</span> कान / Ear</div>
+            <div class="legend-item"><span class="legend-icon">🌬️</span> इनहेलर / Inhaler</div>
+            <div class="legend-item"><span class="legend-icon">🥄</span> बच्चों की खुराक / Pediatric Dose</div>
+        </div>
+    </div>
+
+        <!-- Fever and Cold Section -->
+        <div class="medicine-section" id="fever-section">
+            <div class="section-header">
+                <span class="section-emoji">🤒</span>
+                <div>
+                    <div class="section-title">बुखार और सर्दी / Fever & Cold</div>
+                </div>
+            </div>
+            <table class="medicine-table">
+                <thead>
+                    <tr>
+                        <th>बीमारी / Disease</th>
+                        <th>दवा / Medicine</th>
+                        <th>खुराक / Dose</th>
+                        <th>संकेत / Symbols</th>
+                        <th>सावधानी / Precaution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">बुखार</div>
+                            <div class="english-text">Fever</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">पैरासिटामोल</div>
+                            <div class="english-text">Paracetamol</div>
+                            <small>(Dolo, Calpol)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 1 गोली हर 6 घंटे<br>
+                            <small>1 tablet every 6 hours</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🌡️💊</td>
+                        <td>
+                            <div class="tooltip">लिवर की बीमारी में सावधानी
+                                <span class="tooltiptext">Avoid in severe liver conditions</span>
+                            </div>
+                            <small>Caution in liver disease</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">सिरदर्द के साथ बुखार</div>
+                            <div class="english-text">Fever with Headache</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">एस्प्रिन</div>
+                            <div class="english-text">Aspirin</div>
+                            <small>(Disprin)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 1 गोली दिन में 3 बार<br>
+                            <small>1 tablet 3 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🌡️😖</td>
+                        <td>
+                            <div class="tooltip">⚠️ 16 साल से कम में न दें
+                                <span class="tooltiptext">Risk of Reye's syndrome in children</span>
+                            </div>
+                            <small>⚠️ Not for under 16 years</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">नाक बंद</div>
+                            <div class="english-text">Nasal Congestion</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">सेट्रीज़िन</div>
+                            <div class="english-text">Cetirizine</div>
+                            <small>(Zyrtec)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 1 गोली रात में<br>
+                            <small>1 tablet at night</small>
+                        </td>
+                        <td class="medicine-symbols">🟢👃💤</td>
+                        <td>
+                            <div class="tooltip">नींद आ सकती है
+                                <span class="tooltiptext">Avoid driving or operating machinery</span>
+                            </div>
+                            <small>May cause drowsiness</small>
+                        </td>
+                    </tr>
+                    <tr class="home-remedy">
+                        <td>
+                            <div class="hindi-text">हल्का बुखार</div>
+                            <div class="english-text">Mild Fever</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">तुलसी का काढ़ा</div>
+                            <div class="english-text">Tulsi Decoction</div>
+                        </td>
+                        <td class="dose-info">
+                            🌿 दिन में 2-3 बार<br>
+                            <small>2-3 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🌿🟢</td>
+                        <td>
+                            <div>प्राकृतिक और सुरक्षित</div>
+                            <small>Natural and safe</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">ठंड लगना</div>
+                            <div class="english-text">Chills</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">पैरासिटामोल + कैफीन</div>
+                            <div class="english-text">Paracetamol + Caffeine</div>
+                            <small>(Crocin Advance)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 1 गोली हर 6 घंटे<br>
+                            <small>1 tablet every 6 hours</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🌡️💊</td>
+                        <td>
+                            <div class="tooltip">कैफीन से नींद प्रभावित हो सकती है
+                                <span class="tooltiptext">Avoid in insomnia cases</span>
+                            </div>
+                            <small>Caffeine may affect sleep</small>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Stomach Issues Section -->
+        <div class="medicine-section" id="stomach-section">
+            <div class="section-header">
+                <span class="section-emoji">🤢</span>
+                <div>
+                    <div class="section-title">पेट की समस्या / Stomach Issues</div>
+                </div>
+            </div>
+            <table class="medicine-table">
+                <thead>
+                    <tr>
+                        <th>बीमारी / Disease</th>
+                        <th>दवा / Medicine</th>
+                        <th>खुराक / Dose</th>
+                        <th>संकेत / Symbols</th>
+                        <th>सावधानी / Precaution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">दस्त</div>
+                            <div class="english-text">Diarrhea</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">लोपेरामाइड</div>
+                            <div class="english-text">Loperamide</div>
+                            <small>(Imodium)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 पहले 2 गोली फिर 1 गोली<br>
+                            <small>2 tablets first, then 1 after each loose stool</small>
+                        </td>
+                        <td class="medicine-symbols">🟢💩💊</td>
+                        <td>
+                            <div class="tooltip">बुखार में न लें
+                                <span class="tooltiptext">Consult doctor if fever persists</span>
+                            </div>
+                            <small>Avoid if fever present</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">एसिडिटी</div>
+                            <div class="english-text">Acidity</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">ओमेप्राज़ोल</div>
+                            <div class="english-text">Omeprazole</div>
+                            <small>(Prilosec)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 1 गोली खाने से पहले<br>
+                            <small>1 tablet before meals</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🔥💊</td>
+                        <td>
+                            <div class="tooltip">खाली पेट लें
+                                <span class="tooltiptext">Best taken 30 minutes before food</span>
+                            </div>
+                            <small>Take on empty stomach</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">उल्टी</div>
+                            <div class="english-text">Vomiting</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">डोमपेरिडोन</div>
+                            <div class="english-text">Domperidone</div>
+                            <small>(Motilium)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 1 गोली दिन में 3 बार<br>
+                            <small>1 tablet 3 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🤮💊</td>
+                        <td>
+                            <div class="tooltip">खाने से 15 मिनट पहले
+                                <span class="tooltiptext">Take before meals for best results</span>
+                            </div>
+                            <small>15 minutes before meals</small>
+                        </td>
+                    </tr>
+                    <tr class="home-remedy">
+                        <td>
+                            <div class="hindi-text">गैस की समस्या</div>
+                            <div class="english-text">Gas Problem</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">अजवाइन का पानी</div>
+                            <div class="english-text">Ajwain Water</div>
+                        </td>
+                        <td class="dose-info">
+                            🌿 गर्म पानी के साथ<br>
+                            <small>With warm water</small>
+                        </td>
+                        <td class="medicine-symbols">🌿🟢💨</td>
+                        <td>
+                            <div>तुरंत राहत देता है</div>
+                            <small>Provides immediate relief</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">कब्ज</div>
+                            <div class="english-text">Constipation</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">लैक्टूलोज़</div>
+                            <div class="english-text">Lactulose</div>
+                            <small>(Duphalac)</small>
+                        </td>
+                        <td class="dose-info">
+                            💧 15-30ml रात में<br>
+                            <small>15-30ml at night</small>
+                        </td>
+                        <td class="medicine-symbols">🟢💧</td>
+                        <td>
+                            <div class="tooltip">पानी अधिक पिएं
+                                <span class="tooltiptext">Stay hydrated for best results</span>
+                            </div>
+                            <small>Drink plenty of water</small>
+                        </td>
+                    </tr>
+                    <tr class="home-remedy">
+                        <td>
+                            <div class="hindi-text">पेट में ऐंठन</div>
+                            <div class="english-text">Stomach Cramps</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">पुदीना चाय</div>
+                            <div class="english-text">Peppermint Tea</div>
+                        </td>
+                        <td class="dose-info">
+                            🌿 दिन में 2 बार<br>
+                            <small>2 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🌿🟢</td>
+                        <td>
+                            <div>प्राकृतिक और सुरक्षित</div>
+                            <small>Natural and safe</small>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pain Relief Section -->
+        <div class="medicine-section" id="pain-section">
+            <div class="section-header">
+                <span class="section-emoji">😖</span>
+                <div>
+                    <div class="section-title">दर्द निवारक / Pain Relief</div>
+                </div>
+            </div>
+            <table class="medicine-table">
+                <thead>
+                    <tr>
+                        <th>बीमारी / Disease</th>
+                        <th>दवा / Medicine</th>
+                        <th>खुराक / Dose</th>
+                        <th>संकेत / Symbols</th>
+                        <th>सावधानी / Precaution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">सिरदर्द</div>
+                            <div class="english-text">Headache</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">इबुप्रोफेन</div>
+                            <div class="english-text">Ibuprofen</div>
+                            <small>(Advil, Brufen)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 1-2 गोली हर 6-8 घंटे<br>
+                            <small>1-2 tablets every 6-8 hours</small>
+                        </td>
+                        <td class="medicine-symbols">🟢😖💊</td>
+                        <td>
+                            <div class="tooltip">खाने के साथ लें
+                                <span class="tooltiptext">Reduces stomach irritation</span>
+                            </div>
+                            <small>Take with food</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">मांसपेशियों का दर्द</div>
+                            <div class="english-text">Muscle Pain</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">डिक्लोफेनाक जेल</div>
+                            <div class="english-text">Diclofenac Gel</div>
+                            <small>(Volini)</small>
+                        </td>
+                        <td class="dose-info">
+                            🧴 दिन में 3-4 बार लगाएं<br>
+                            <small>Apply 3-4 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🟢💪🧴</td>
+                        <td>
+                            <div class="tooltip">केवल बाहरी उपयोग
+                                <span class="tooltiptext">Do not apply on open wounds</span>
+                            </div>
+                            <small>External use only</small>
+                        </td>
+                    </tr>
+                    <tr class="prescription-medicine">
+                        <td>
+                            <div class="hindi-text">तेज़ दांत दर्द</div>
+                            <div class="english-text">Severe Toothache</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">केटोरोलेक</div>
+                            <div class="english-text">Ketorolac</div>
+                            <small>(Toradol)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 1 गोली हर 6 घंटे<br>
+                            <small>1 tablet every 6 hours</small>
+                        </td>
+                        <td class="medicine-symbols">🔴🦷💊</td>
+                        <td>
+                            <div class="tooltip">⚠️ डॉक्टर की सलाह लें
+                                <span class="tooltiptext">Short-term use only</span>
+                            </div>
+                            <small>⚠️ Consult doctor</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">जोड़ों का दर्द</div>
+                            <div class="english-text">Joint Pain</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">नैप्रोक्सेन</div>
+                            <div class="english-text">Naproxen</div>
+                            <small>(Aleve)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 1 गोली हर 8-12 घंटे<br>
+                            <small>1 tablet every 8-12 hours</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🦴💊</td>
+                        <td>
+                            <div class="tooltip">खाने के साथ लें
+                                <span class="tooltiptext">Reduces stomach upset</span>
+                            </div>
+                            <small>Take with food</small>
+                        </td>
+                    </tr>
+                    <tr class="home-remedy">
+                        <td>
+                            <div class="hindi-text">हल्का दर्द</div>
+                            <div class="english-text">Mild Pain</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">हल्दी दूध</div>
+                            <div class="english-text">Turmeric Milk</div>
+                        </td>
+                        <td class="dose-info">
+                            🌿 रात में 1 गिलास<br>
+                            <small>1 glass at night</small>
+                        </td>
+                        <td class="medicine-symbols">🌿🟢</td>
+                        <td>
+                            <div>प्राकृतिक और सुरक्षित</div>
+                            <small>Natural and safe</small>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Skin Conditions Section -->
+        <div class="medicine-section" id="skin-section">
+            <div class="section-header">
+                <span class="section-emoji">🩹</span>
+                <div>
+                    <div class="section-title">चर्म रोग / Skin Conditions</div>
+                </div>
+            </div>
+            <table class="medicine-table">
+                <thead>
+                    <tr>
+                        <th>बीमारी / Disease</th>
+                        <th>दवा / Medicine</th>
+                        <th>खुराक / Dose</th>
+                        <th>संकेत / Symbols</th>
+                        <th>सावधानी / Precaution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">खुजली</div>
+                            <div class="english-text">Itching</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">कैलामाइन लोशन</div>
+                            <div class="english-text">Calamine Lotion</div>
+                        </td>
+                        <td class="dose-info">
+                            🧴 दिन में 2-3 बार लगाएं<br>
+                            <small>Apply 2-3 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🧴✋</td>
+                        <td>
+                            <div class="tooltip">सूखने दें
+                                <span class="tooltiptext">Avoid covering with bandage</span>
+                            </div>
+                            <small>Let it dry</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">छोटे कटने</div>
+                            <div class="english-text">Minor Cuts</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">बेटाडाइन</div>
+                            <div class="english-text">Betadine</div>
+                        </td>
+                        <td class="dose-info">
+                            🧴 साफ करके लगाएं<br>
+                            <small>Clean and apply</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🩹🧴</td>
+                        <td>
+                            <div class="tooltip">घाव को साफ रखें
+                                <span class="tooltiptext">Change dressing daily</span>
+                            </div>
+                            <small>Keep wound clean</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">फंगल इन्फेक्शन</div>
+                            <div class="english-text">Fungal Infection</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">टर्बिनाफाइन क्रीम</div>
+                            <div class="english-text">Terbinafine Cream</div>
+                            <small>(Lamisil)</small>
+                        </td>
+                        <td class="dose-info">
+                            🧴 दिन में 2 बार लगाएं<br>
+                            <small>Apply 2 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🧴🦶</td>
+                        <td>
+                            <div class="tooltip">2-4 सप्ताह तक उपयोग करें
+                                <span class="tooltiptext">Continue even after symptoms resolve</span>
+                            </div>
+                            <small>Use for 2-4 weeks</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">मुंहासे</div>
+                            <div class="english-text">Acne</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">बेंज़ोइल पेरोक्साइड</div>
+                            <div class="english-text">Benzoyl Peroxide</div>
+                            <small>(Benzac)</small>
+                        </td>
+                        <td class="dose-info">
+                            🧴 दिन में 1-2 बार लगाएं<br>
+                            <small>Apply 1-2 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🧴😣</td>
+                        <td>
+                            <div class="tooltip">त्वचा को सूखा सकता है
+                                <span class="tooltiptext">Use moisturizer if needed</span>
+                            </div>
+                            <small>May dry skin</small>
+                        </td>
+                    </tr>
+                    <tr class="home-remedy">
+                        <td>
+                            <div class="hindi-text">त्वचा की जलन</div>
+                            <div class="english-text">Skin Irritation</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">एलोवेरा जेल</div>
+                            <div class="english-text">Aloe Vera Gel</div>
+                        </td>
+                        <td class="dose-info">
+                            🌿 दिन में 2-3 बार लगाएं<br>
+                            <small>Apply 2-3 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🌿🟢</td>
+                        <td>
+                            <div>प्राकृतिक और सुरक्षित</div>
+                            <small>Natural and safe</small>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Respiratory Issues Section -->
+        <div class="medicine-section" id="respiratory-section">
+            <div class="section-header">
+                <span class="section-emoji">🫁</span>
+                <div>
+                    <div class="section-title">सांस की समस्या / Respiratory Issues</div>
+                </div>
+            </div>
+            <table class="medicine-table">
+                <thead>
+                    <tr>
+                        <th>बीमारी / Disease</th>
+                        <th>दवा / Medicine</th>
+                        <th>खुराक / Dose</th>
+                        <th>संकेत / Symbols</th>
+                        <th>सावधानी / Precaution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">सूखी खांसी</div>
+                            <div class="english-text">Dry Cough</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">डायफेनहाइड्रामाइन</div>
+                            <div class="english-text">Diphenhydramine</div>
+                            <small>(Benadryl)</small>
+                        </td>
+                        <td class="dose-info">
+                            💧 10ml रात में<br>
+                            <small>10ml at night</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🫁💧</td>
+                        <td>
+                            <div class="tooltip">नींद आ सकती है
+                                <span class="tooltiptext">Avoid alcohol</span>
+                            </div>
+                            <small>May cause drowsiness</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">बलगम वाली खांसी</div>
+                            <div class="english-text">Productive Cough</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">ग्वायफेनेसिन</div>
+                            <div class="english-text">Guaifenesin</div>
+                            <small>(Mucinex)</small>
+                        </td>
+                        <td class="dose-info">
+                            💧 10ml हर 4 घंटे<br>
+                            <small>10ml every 4 hours</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🫁💧</td>
+                        <td>
+                            <div class="tooltip">पानी अधिक पिएं
+                                <span class="tooltiptext">Helps thin mucus</span>
+                            </div>
+                            <small>Drink plenty of water</small>
+                        </td>
+                    </tr>
+                    <tr class="prescription-medicine">
+                        <td>
+                            <div class="hindi-text">दमा</div>
+                            <div class="english-text">Asthma</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">सालब्यूटामॉल</div>
+                            <div class="english-text">Salbutamol</div>
+                            <small>(Ventolin)</small>
+                        </td>
+                        <td class="dose-info">
+                            🌬️ 2 पफ हर 4-6 घंटे<br>
+                            <small>2 puffs every 4-6 hours</small>
+                        </td>
+                        <td class="medicine-symbols">🔴🫁🌬️</td>
+                        <td>
+                            <div class="tooltip">⚠️ डॉक्टर की सलाह लें
+                                <span class="tooltiptext">Use with spacer for best results</span>
+                            </div>
+                            <small>⚠️ Consult doctor</small>
+                        </td>
+                    </tr>
+                    <tr class="home-remedy">
+                        <td>
+                            <div class="hindi-text">खांसी</div>
+                            <div class="english-text">Cough</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">शहद और अदरक</div>
+                            <div class="english-text">Honey and Ginger</div>
+                        </td>
+                        <td class="dose-info">
+                            🌿 1 चम्मच दिन में 2 बार<br>
+                            <small>1 tsp 2 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🌿🟢</td>
+                        <td>
+                            <div>प्राकृतिक और सुरक्षित</div>
+                            <small>Natural and safe</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">नाक बहना</div>
+                            <div class="english-text">Runny Nose</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">लोराटाडाइन</div>
+                            <div class="english-text">Loratadine</div>
+                            <small>(Claritin)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 1 गोली दिन में 1 बार<br>
+                            <small>1 tablet daily</small>
+                        </td>
+                        <td class="medicine-symbols">🟢👃💊</td>
+                        <td>
+                            <div class="tooltip">गैर-नींद वाला
+                                <span class="tooltiptext">Non-drowsy formula</span>
+                            </div>
+                            <small>Non-drowsy</small>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Eye and Ear Issues Section -->
+        <div class="medicine-section" id="eye-ear-section">
+            <div class="section-header">
+                <span class="section-emoji">👁️</span>
+                <div>
+                    <div class="section-title">आंख-कान / Eye & Ear</div>
+                </div>
+            </div>
+            <table class="medicine-table">
+                <thead>
+                    <tr>
+                        <th>बीमारी / Disease</th>
+                        <th>दवा / Medicine</th>
+                        <th>खुराक / Dose</th>
+                        <th>संकेत / Symbols</th>
+                        <th>सावधानी / Precaution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">आंख में लालिमा</div>
+                            <div class="english-text">Eye Redness</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">नेफाज़ोलिन ड्रॉप</div>
+                            <div class="english-text">Naphazoline Drops</div>
+                            <small>(Clearine)</small>
+                        </td>
+                        <td class="dose-info">
+                            💧 1-2 बूंद दिन में 2 बार<br>
+                            <small>1-2 drops 2 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🟢👁️💧</td>
+                        <td>
+                            <div class="tooltip">3 दिन से अधिक न करें
+                                <span class="tooltiptext">Prolonged use may worsen symptoms</span>
+                            </div>
+                            <small>Use for max 3 days</small>
+                        </td>
+                    </tr>
+                    <tr class="prescription-medicine">
+                        <td>
+                            <div class="hindi-text">कान में दर्द</div>
+                            <div class="english-text">Ear Pain</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">एंटीबायोटिक ड्रॉप</div>
+                            <div class="english-text">Antibiotic Drops</div>
+                            <small>(Ciplox)</small>
+                        </td>
+                        <td class="dose-info">
+                            💧 2-3 बूंद दिन में 3 बार<br>
+                            <small>2-3 drops 3 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🔴👂💧</td>
+                        <td>
+                            <div class="tooltip">⚠️ डॉक्टर की सलाह लें
+                                <span class="tooltiptext">Complete full course</span>
+                            </div>
+                            <small>⚠️ Consult doctor</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">आंख में खुजली</div>
+                            <div class="english-text">Eye Itching</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">केटोटिफेन ड्रॉप</div>
+                            <div class="english-text">Ketotifen Drops</div>
+                            <small>(Zaditor)</small>
+                        </td>
+                        <td class="dose-info">
+                            💧 1 बूंद दिन में 2 बार<br>
+                            <small>1 drop 2 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🟢👁️💧</td>
+                        <td>
+                            <div class="tooltip">लेंस हटाएं
+                                <span class="tooltiptext">Remove contact lenses before use</span>
+                            </div>
+                            <small>Remove lenses</small>
+                        </td>
+                    </tr>
+                    <tr class="home-remedy">
+                        <td>
+                            <div class="hindi-text">आंखों की थकान</div>
+                            <div class="english-text">Eye Strain</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">गुलाब जल</div>
+                            <div class="english-text">Rose Water</div>
+                        </td>
+                        <td class="dose-info">
+                            🌿 2 बूंद दिन में 2 बार<br>
+                            <small>2 drops 2 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🌿🟢</td>
+                        <td>
+                            <div>प्राकृतिक और सुरक्षित</div>
+                            <small>Natural and safe</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">कान में मोम</div>
+                            <div class="english-text">Ear Wax</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">हाइड्रोजन पेरोक्साइड ड्रॉप</div>
+                            <div class="english-text">Hydrogen Peroxide Drops</div>
+                        </td>
+                        <td class="dose-info">
+                            💧 3-5 बूंद दिन में 1 बार<br>
+                            <small>3-5 drops once daily</small>
+                        </td>
+                        <td class="medicine-symbols">🟢👂💧</td>
+                        <td>
+                            <div class="tooltip">कान साफ करें
+                                <span class="tooltiptext">Rinse ear after use</span>
+                            </div>
+                            <small>Clean ear after</small>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Allergies Section -->
+        <div class="medicine-section" id="allergy-section">
+            <div class="section-header">
+                <span class="section-emoji">🤧</span>
+                <div>
+                    <div class="section-title">एलर्जी / Allergies</div>
+                </div>
+            </div>
+            <table class="medicine-table">
+                <thead>
+                    <tr>
+                        <th>बीमारी / Disease</th>
+                        <th>दवा / Medicine</th>
+                        <th>खुराक / Dose</th>
+                        <th>संकेत / Symbols</th>
+                        <th>सावधानी / Precaution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">एलर्जिक राइनाइटिस</div>
+                            <div class="english-text">Allergic Rhinitis</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">लोराटाडाइन</div>
+                            <div class="english-text">Loratadine</div>
+                            <small>(Claritin)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 1 गोली दिन में 1 बार<br>
+                            <small>1 tablet daily</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🤧💊</td>
+                        <td>
+                            <div class="tooltip">गैर-नींद वाला
+                                <span class="tooltiptext">Safe for daytime use</span>
+                            </div>
+                            <small>Non-drowsy</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">त्वचा की एलर्जी</div>
+                            <div class="english-text">Skin Allergy</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">हाइड्रोकार्टिसोन क्रीम</div>
+                            <div class="english-text">Hydrocortisone Cream</div>
+                        </td>
+                        <td class="dose-info">
+                            🧴 दिन में 2 बार लगाएं<br>
+                            <small>Apply 2 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🧴✋</td>
+                        <td>
+                            <div class="tooltip">7 दिन से अधिक न करें
+                                <span class="tooltiptext">Prolonged use may thin skin</span>
+                            </div>
+                            <small>Use for max 7 days</small>
+                        </td>
+                    </tr>
+                    <tr class="prescription-medicine">
+                        <td>
+                            <div class="hindi-text">गंभीर एलर्जी</div>
+                            <div class="english-text">Severe Allergy</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">प्रेडनिसोलोन</div>
+                            <div class="english-text">Prednisolone</div>
+                        </td>
+                        <td class="dose-info">
+                            💊 डॉक्टर के अनुसार<br>
+                            <small>As per doctor</small>
+                        </td>
+                        <td class="medicine-symbols">🔴🤧💊</td>
+                        <td>
+                            <div class="tooltip">⚠️ डॉक्टर की सलाह लें
+                                <span class="tooltiptext">Monitor for side effects</span>
+                            </div>
+                            <small>⚠️ Consult doctor</small>
+                        </td>
+                    </tr>
+                    <tr class="home-remedy">
+                        <td>
+                            <div class="hindi-text">हल्की एलर्जी</div>
+                            <div class="english-text">Mild Allergy</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">नीम का तेल</div>
+                            <div class="english-text">Neem Oil</div>
+                        </td>
+                        <td class="dose-info">
+                            🌿 दिन में 2 बार लगाएं<br>
+                            <small>Apply 2 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🌿🟢</td>
+                        <td>
+                            <div>प्राकृतिक और सुरक्षित</div>
+                            <small>Natural and safe</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">एलर्जी से छींक</div>
+                            <div class="english-text">Sneezing from Allergy</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">फेक्सोफेनाडाइन</div>
+                            <div class="english-text">Fexofenadine</div>
+                            <small>(Allegra)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 1 गोली दिन में 1 बार<br>
+                            <small>1 tablet daily</small>
+                        </td>
+                        <td class="medicine-symbols">🟢🤧💊</td>
+                        <td>
+                            <div class="tooltip">गैर-नींद वाला
+                                <span class="tooltiptext">Safe for daytime use</span>
+                            </div>
+                            <small>Non-drowsy</small>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Infections Section -->
+        <div class="medicine-section" id="infection-section">
+            <div class="section-header">
+                <span class="section-emoji">🦠</span>
+                <div>
+                    <div class="section-title">संक्रमण / Infections</div>
+                </div>
+            </div>
+            <table class="medicine-table">
+                <thead>
+                    <tr>
+                        <th>बीमारी / Disease</th>
+                        <th>दवा / Medicine</th>
+                        <th>खुराक / Dose</th>
+                        <th>संकेत / Symbols</th>
+                        <th>सावधानी / Precaution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="prescription-medicine">
+                        <td>
+                            <div class="hindi-text">मूत्र मार्ग संक्रमण</div>
+                            <div class="english-text">Urinary Tract Infection</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">नाइट्रोफ्यूरेंटोइन</div>
+                            <div class="english-text">Nitrofurantoin</div>
+                            <small>(Macrobid)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 1 गोली दिन में 2 बार<br>
+                            <small>1 tablet 2 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🔴🚻💊</td>
+                        <td>
+                            <div class="tooltip">⚠️ डॉक्टर की सलाह लें
+                                <span class="tooltiptext">Complete full course</span>
+                            </div>
+                            <small>⚠️ Consult doctor</small>
+                        </td>
+                    </tr>
+                    <tr class="prescription-medicine">
+                        <td>
+                            <div class="hindi-text">गले में खराश</div>
+                            <div class="english-text">Sore Throat</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">अमोक्सिसिलिन</div>
+                            <div class="english-text">Amoxicillin</div>
+                            <small>(Amoxil)</small>
+                        </td>
+                        <td class="dose-info">
+                            💊 1 गोली दिन में 3 बार<br>
+                            <small>1 tablet 3 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🔴😷💊</td>
+                        <td>
+                            <div class="tooltip">⚠️ डॉक्टर की सलाह लें
+                                <span class="tooltiptext">Complete full course</span>
+                            </div>
+                            <small>⚠️ Consult doctor</small>
+                        </td>
+                    </tr>
+                    <tr class="otc-medicine">
+                        <td>
+                            <div class="hindi-text">मुंह के छाले</div>
+                            <div class="english-text">Mouth Ulcers</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">बेंज़ोकेन जेल</div>
+                            <div class="english-text">Benzocaine Gel</div>
+                            <small>(Oragel)</small>
+                        </td>
+                        <td class="dose-info">
+                            🧴 दिन में 3-4 बार लगाएं<br>
+                            <small>Apply 3-4 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🟢👄🧴</td>
+                        <td>
+                            <div class="tooltip">खाने से पहले लगाएं
+                                <span class="tooltiptext">Apply before meals</span>
+                            </div>
+                            <small>Apply before meals</small>
+                        </td>
+                    </tr>
+                    <tr class="home-remedy">
+                        <td>
+                            <div class="hindi-text">हल्का गला खराब</div>
+                            <div class="english-text">Mild Sore Throat</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">नमक पानी गरारा</div>
+                            <div class="english-text">Salt Water Gargle</div>
+                        </td>
+                        <td class="dose-info">
+                            🌿 दिन में 3-4 बार<br>
+                            <small>3-4 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🌿🟢</td>
+                        <td>
+                            <div>प्राकृतिक और सुरक्षित</div>
+                            <small>Natural and safe</small>
+                        </td>
+                    </tr>
+                    <tr class="prescription-medicine">
+                        <td>
+                            <div class="hindi-text">बैक्टीरियल त्वचा संक्रमण</div>
+                            <div class="english-text">Bacterial Skin Infection</div>
+                        </td>
+                        <td>
+                            <div class="hindi-text">मुपीरोसिन मलहम</div>
+                            <div class="english-text">Mupirocin Ointment</div>
+                            <small>(Bactroban)</small>
+                        </td>
+                        <td class="dose-info">
+                            🧴 दिन में 3 बार लगाएं<br>
+                            <small>Apply 3 times daily</small>
+                        </td>
+                        <td class="medicine-symbols">🔴🧴🦠</td>
+                        <td>
+                            <div class="tooltip">⚠️ डॉक्टर की सलाह लें
+                                <span class="tooltiptext">Use for prescribed duration</span>
+                            </div>
+                            <small>⚠️ Consult doctor</small>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Home Remedies Section -->
+        <div class="home-remedies">
+            <h2 class="section-title">घरेलू उपचार / Home Remedies</h2>
+            <div class="remedy-grid">
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>हल्का बुखार / Mild Fever</h3>
+                    <p>तुलसी का काढ़ा: 10-15 तुलसी की पत्तियां उबालें और दिन में 2-3 बार पिएं।<br>
+                    <small>Tulsi Decoction: Boil 10-15 tulsi leaves, drink 2-3 times daily.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>गैस की समस्या / Gas Problem</h3>
+                    <p>अजवाइन का पानी: 1 चम्मच अजवाइन गर्म पानी में उबालें और पिएं।<br>
+                    <small>Ajwain Water: Boil 1 tsp ajwain in water and drink.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>पेट में ऐंठन / Stomach Cramps</h3>
+                    <p>पुदीना चाय: ताजा पुदीना पत्तियों को उबालकर दिन में 2 बार पिएं।<br>
+                    <small>Peppermint Tea: Boil fresh mint leaves, drink 2 times daily.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>त्वचा की जलन / Skin Irritation</h3>
+                    <p>एलोवेरा जेल: ताजा एलोवेरा जेल दिन में 2-3 बार लगाएं।<br>
+                    <small>Aloe Vera Gel: Apply fresh aloe vera 2-3 times daily.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>खांसी / Cough</h3>
+                    <p>शहद और अदरक: 1 चम्मच शहद में अदरक का रस मिलाकर दिन में 2 बार लें।<br>
+                    <small>Honey and Ginger: Mix 1 tsp honey with ginger juice, take 2 times daily.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>हल्का गला खराब / Mild Sore Throat</h3>
+                    <p>नमक पानी गरारा: 1 गिलास गर्म पानी में 1 चम्मच नमक मिलाकर गरारा करें।<br>
+                    <small>Salt Water Gargle: Gargle with 1 tsp salt in warm water.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>सिरदर्द / Headache</h3>
+                    <p>लौंग का तेल: 2-3 बूंद लौंग के तेल को माथे पर हल्के से मालिश करें।<br>
+                    <small>Clove Oil: Massage 2-3 drops of clove oil on the forehead.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>कब्ज / Constipation</h3>
+                    <p>त्रिफला चूर्ण: रात को 1 चम्मच त्रिफला चूर्ण गुनगुने पानी के साथ लें।<br>
+                    <small>Triphala Powder: Take 1 tsp triphala powder with warm water at night.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>मुंह के छाले / Mouth Ulcers</h3>
+                    <p>नारियल तेल: प्रभावित क्षेत्र पर नारियल तेल दिन में 2-3 बार लगाएं।<br>
+                    <small>Coconut Oil: Apply coconut oil to the affected area 2-3 times daily.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>नींद न आना / Insomnia</h3>
+                    <p>दूध और हल्दी: 1 गिलास गर्म दूध में आधा चम्मच हल्दी मिलाकर पिएं।<br>
+                    <small>Milk and Turmeric: Mix ½ tsp turmeric in a glass of warm milk and drink.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>जोड़ों का दर्द / Joint Pain</h3>
+                    <p>सरसों का तेल: गर्म सरसों के तेल से जोड़ों की मालिश करें।<br>
+                    <small>Mustard Oil: Massage joints with warm mustard oil.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>मुहांसे / Acne</h3>
+                    <p>नीम का पेस्ट: नीम की पत्तियों का पेस्ट बनाकर चेहरे पर 15 मिनट तक लगाएं।<br>
+                    <small>Neem Paste: Apply neem leaf paste on the face for 15 minutes.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>थकान / Fatigue</h3>
+                    <p>नारियल पानी: दिन में 1-2 गिलास नारियल पानी पिएं।<br>
+                    <small>Coconut Water: Drink 1-2 glasses of coconut water daily.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>बालों का झड़ना / Hair Fall</h3>
+                    <p>प्याज का रस: प्याज का रस स्कैल्प पर लगाएं और 30 मिनट बाद धो लें।<br>
+                    <small>Onion Juice: Apply onion juice to the scalp and wash after 30 minutes.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>पाचन समस्याएं / Digestive Issues</h3>
+                    <p>जीरा पानी: 1 चम्मच जीरा उबालकर दिन में 2 बार पिएं।<br>
+                    <small>Cumin Water: Boil 1 tsp cumin seeds and drink 2 times daily.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>हल्का दस्त / Mild Diarrhea</h3>
+                    <p>दही और केला: 1 कटोरी दही के साथ 1 पका केला खाएं।<br>
+                    <small>Curd and Banana: Eat a bowl of curd with a ripe banana.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>मधुमेह नियंत्रण / Diabetes Control</h3>
+                    <p>करेला का जूस: सुबह खाली पेट 1 कप करेला का जूस पिएं।<br>
+                    <small>Bitter Gourd Juice: Drink 1 cup bitter gourd juice on empty stomach in the morning.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>हाई ब्लड प्रेशर / High Blood Pressure</h3>
+                    <p>लहसुन: सुबह खाली पेट 2-3 लहसुन की कलियां चबाकर खाएं।<br>
+                    <small>Garlic: Chew 2-3 garlic cloves on empty stomach in the morning.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>किडनी की पथरी / Kidney Stones</h3>
+                    <p>नींबू पानी: 1 गिलास पानी में 1 नींबू का रस मिलाकर दिन में 3 बार पिएं।<br>
+                    <small>Lemon Water: Mix juice of 1 lemon in a glass of water, drink 3 times daily.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>डैंड्रफ / Dandruff</h3>
+                    <p>नींबू और नारियल तेल: 2 चम्मच नारियल तेल में 1 चम्मच नींबू का रस मिलाकर सिर में लगाएं।<br>
+                    <small>Lemon and Coconut Oil: Mix 1 tsp lemon juice with 2 tsp coconut oil and apply to scalp.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>गले की खराश / Throat Infection</h3>
+                    <p>अदरक की चाय: अदरक का टुकड़ा, शहद और नींबू मिलाकर चाय बनाएं।<br>
+                    <small>Ginger Tea: Make tea with ginger, honey, and lemon.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>आंखों की थकान / Eye Strain</h3>
+                    <p>खीरे के टुकड़े: ठंडे खीरे के पतले टुकड़े आंखों पर 10 मिनट तक रखें।<br>
+                    <small>Cucumber Slices: Place cold cucumber slices on eyes for 10 minutes.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>साइनस की समस्या / Sinus Problem</h3>
+                    <p>भाप लेना: गर्म पानी में नीलगिरी का तेल डालकर भाप लें।<br>
+                    <small>Steam Inhalation: Inhale steam from hot water with eucalyptus oil.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>मांसपेशियों का दर्द / Muscle Pain</h3>
+                    <p>हल्दी का दूध: 1 गिलास गर्म दूध में 1 चम्मच हल्दी मिलाकर पिएं।<br>
+                    <small>Turmeric Milk: Mix 1 tsp turmeric in a glass of warm milk and drink.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>वजन घटाना / Weight Loss</h3>
+                    <p>मेथी का पानी: रात भर भिगोई मेथी को सुबह खाली पेट पानी के साथ लें।<br>
+                    <small>Fenugreek Water: Soak fenugreek overnight and drink the water on empty stomach.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>एसिडिटी / Acidity</h3>
+                    <p>पुदीना और नींबू: 1 गिलास पानी में पुदीना के पत्ते और नींबू का रस मिलाएं।<br>
+                    <small>Mint and Lemon: Mix mint leaves and lemon juice in a glass of water.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>अर्थराइटिस / Arthritis</h3>
+                    <p>हल्दी और दूध: हल्दी पाउडर को गर्म दूध में मिलाकर रात को पिएं।<br>
+                    <small>Turmeric and Milk: Mix turmeric powder in warm milk and drink at night.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>बवासीर / Hemorrhoids</h3>
+                    <p>नारियल तेल और कपूर: नारियल तेल में कपूर मिलाकर प्रभावित क्षेत्र पर लगाएं।<br>
+                    <small>Coconut Oil and Camphor: Mix camphor in coconut oil and apply to affected area.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>गर्दन का दर्द / Neck Pain</h3>
+                    <p>गर्म सिकाई: गर्म पानी की बोतल से गर्दन की 15-20 मिनट सिकाई करें।<br>
+                    <small>Hot Compress: Apply hot water bottle to neck for 15-20 minutes.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>खुजली / Itching</h3>
+                    <p>नीम की पत्तियां: नीम की पत्तियों को पानी में उबालकर नहाने के पानी में मिलाएं।<br>
+                    <small>Neem Leaves: Boil neem leaves in water and add to bathing water.</small></p>
+                </div>
+                <div class="remedy-card">
+                    <div class="remedy-icon">🌿</div>
+                    <h3>दांत दर्द / Toothache</h3>
+                    <p>लौंग: दांत दर्द की जगह पर लौंग दबाकर रखें या लौंग का तेल लगाएं।<br>
+                    <small>Clove: Press a clove on the aching tooth or apply clove oil.</small></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pediatric Section -->
+
+    </div>
+
+    <script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js">
+        function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+const searchBar = document.getElementById('searchBar');
+if (searchBar) {
+    searchBar.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
+        const rows = document.querySelectorAll('.medicine-table tbody tr');
+        rows.forEach(row => {
+            const disease = row.querySelector('.hindi-text')?.textContent.toLowerCase() || '';
+            const medicine = row.querySelector('.hindi-text:nth-child(2)')?.textContent.toLowerCase() || '';
+            row.style.display = (disease.includes(searchTerm) || medicine.includes(searchTerm)) ? '' : 'none';
+        });
+    });
+}
+
+const downloadButton = document.getElementById('downloadPdf');
+if (downloadButton) {
+    downloadButton.addEventListener('click', function() {
+        const element = document.querySelector('.container');
+        if (!element) {
+            console.error('Container element not found');
+            alert('Error: Content container not found. Please contact support.');
+            return;
+        }
+
+        const opt = {
+            margin: [10, 10, 10, 10],
+            filename: 'Medicine_Guide.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2, useCORS: true, logging: true },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+            pagebreak: { mode: ['css', 'legacy'], avoid: ['table', 'tr', '.medicine-table'] }
+        };
+
+        try {
+            html2pdf().set(opt).from(element).save().catch(err => {
+                console.error('PDF generation failed:', err);
+                alert('Failed to generate PDF. Please try again or check the console for errors.');
+            });
+        } catch (err) {
+            console.error('html2pdf error:', err);
+            alert('Error loading PDF library. Please ensure you have an internet connection.');
+        }
+    });
+});
+
+    </script>
